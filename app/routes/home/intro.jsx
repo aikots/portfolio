@@ -3,6 +3,16 @@ import { Heading } from '~/components/heading';
 import { Section } from '~/components/section';
 import { useTheme } from '~/components/theme-provider';
 import { tokens } from '~/components/theme-provider/theme';
+
+// Add custom theme colors
+const customColors = {
+  text: '#003366', // Navy blue
+  textTitle: '#003366', // Navy blue
+};
+
+// Override default tokens with custom colors
+tokens.text = customColors.text;
+tokens.textTitle = customColors.textTitle;
 import { Transition } from '~/components/transition';
 import { VisuallyHidden } from '~/components/visually-hidden';
 import { Link as RouterLink } from '@remix-run/react';
@@ -22,9 +32,7 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
   const { disciplines } = config;
   const [disciplineIndex, setDisciplineIndex] = useState(0);
   const prevTheme = usePrevious(theme);
-  const introLabel = [disciplines.slice(0, -1).join(', '), disciplines.slice(-1)[0]].join(
-    ', and '
-  );
+  const introLabel = disciplines.join(', ');
   const currentDiscipline = disciplines.find((item, index) => index === disciplineIndex);
   const titleId = `${id}-title`;
   const scrollToHash = useScrollToHash();
@@ -64,9 +72,7 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
         {({ visible, status }) => (
           <>
             {isHydrated && (
-              <Suspense>
-                <DisplacementSphere />
-              </Suspense>
+              <img src="/images/banner.png" alt="Site banner" className={styles.banner} />
             )}
             <header className={styles.text}>
               <h1 className={styles.name} data-visible={visible} id={titleId}>
@@ -80,11 +86,10 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
                   <span
                     className={styles.word}
                     data-status={status}
-                    style={cssProps({ delay: tokens.base.durationXS })}
+                    style={{ color: '#003366' }}
                   >
                     {config.role}
                   </span>
-                  <span className={styles.line} data-status={status} />
                 </span>
                 <div className={styles.row}>
                   {disciplines.map(item => (
@@ -101,7 +106,7 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
                           className={styles.word}
                           data-plus={true}
                           data-status={status}
-                          style={cssProps({ delay: tokens.base.durationL })}
+                          style={{ color: '#003366' }}
                         >
                           {item}
                         </span>

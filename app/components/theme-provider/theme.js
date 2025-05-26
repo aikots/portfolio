@@ -120,15 +120,15 @@ const dark = {
 };
 
 const light = {
-  background: 'oklch(96.12% 0 0)',
+  background: 'oklch(96.12% 0.02 200)',
   backgroundLight: 'var(--white)',
-  primary: 'var(--black)',
-  accent: 'oklch(84.42% 0.19 202.24)',
-  error: 'oklch(63.17% 0.259 25.41)',
-  text: 'var(--black)',
-  textTitle: 'color-mix(in lab, var(--text) 90%, transparent)',
-  textBody: 'color-mix(in lab, var(--text) 75%, transparent)',
-  textLight: 'color-mix(in lab, var(--text) 55%, transparent)',
+  primary: '#003366',
+  accent: '#003366',
+  error: '#003366',
+  text: '#003366',
+  textTitle: '#003366',
+  textBody: '#003366',
+  textLight: '#003366',
 };
 
 export const tokens = {

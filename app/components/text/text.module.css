@@ -1,7 +1,24 @@
 @layer components {
+  .text,
+  .project-summary {
+    line-height: var(--lineHeightBody);
+    color: var(--textBody);
+
+    font-family: var(--fontStack);
+  }
+
+  .project-summary {
+    font-family: var(--fontStackFreight);
+    font-weight: 300;
+  }
+
   .text {
     line-height: var(--lineHeightBody);
     color: var(--textBody);
+
+  .author-name {
+    color: #003366;
+  }
 
     &[data-size='s'] {
       font-size: var(--fontSizeBodyS);
@@ -48,7 +65,7 @@
     }
 
     &[data-secondary='true'] {
-      color: var(--textLight);
+      color: #003366;
     }
   }
 }

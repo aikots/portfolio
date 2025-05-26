@@ -7,6 +7,7 @@
   padding-bottom: 40px;
   display: flex;
   justify-content: center;
+  background-color: var(--white);
 
   @media (--mediaTablet) {
     padding-top: 50px;
@@ -59,6 +60,7 @@
 .title {
   white-space: nowrap;
   margin-bottom: var(--spaceL);
+  color: #003366;
   opacity: 0;
   transition: opacity var(--durationXL) ease var(--durationM);
 
@@ -69,6 +71,7 @@
 
 .description {
   margin-bottom: var(--spaceXL);
+  color: #003366;
   opacity: 0;
   transition: opacity var(--durationXL) ease var(--durationL);
 
@@ -93,7 +96,7 @@
 .tagText {
   font-size: var(--fontSizeBodyS);
   font-weight: var(--fontWeightMedium);
-  color: var(--primary);
+  color: #003366;
   opacity: 0;
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);

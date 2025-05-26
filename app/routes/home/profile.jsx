@@ -1,6 +1,6 @@
-import profileImgLarge from '~/assets/profile-large.jpg';
-import profileImgPlaceholder from '~/assets/profile-placeholder.jpg';
-import profileImg from '~/assets/profile.jpg';
+import profileImg from '/images/profile.png';
+import profileImgPlaceholder from '/images/profile.png';
+import profileImgLarge from '/images/profile.png';
 import { Button } from '~/components/button';
 import { DecoderText } from '~/components/decoder-text';
 import { Divider } from '~/components/divider';
@@ -81,10 +81,11 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   reveal
                   delay={100}
                   placeholder={profileImgPlaceholder}
-                  srcSet={`${profileImg} 480w, ${profileImgLarge} 960w`}
-                  width={960}
-                  height={1280}
+                  src={profileImg}
+                  width={480}
+                  height={640}
                   sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
+                  alt="Mina at the Qwilr office in Sydney"
                   alt="Me smiling like a goofball at the Qwilr office in Sydney"
                 />
                 <svg className={styles.svg} data-visible={visible} viewBox="0 0 136 766">

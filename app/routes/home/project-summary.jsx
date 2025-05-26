@@ -80,13 +80,13 @@ export function ProjectSummary({
         <Heading
           level={3}
           as="h2"
-          className={styles.title}
+          className={[styles.title, styles.navyText].join(' ')}
           data-visible={visible}
           id={titleId}
         >
           {title}
         </Heading>
-        <Text className={styles.description} data-visible={visible} as="p">
+        <Text className={[styles.description, styles.navyText, styles.projectSummary].join(' ')} data-visible={visible} as="p">
           {description}
         </Text>
         <div className={styles.button} data-visible={visible}>

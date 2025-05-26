@@ -1,0 +1,76 @@
+:root {
+  --storybook-primary: #003366;
+  --storybook-background: #ffffff;
+  --storybook-text: #003366;
+  --storybook-border: #003366;
+  --storybook-accent: #003366;
+  --storybook-error: #003366;
+  --storybook-success: #003366;
+  --storybook-warning: #003366;
+  --storybook-info: #003366;
+  --storybook-hover: #24527a;
+}
+
+[data-theme='dark'] {
+  --storybook-primary: #003366;
+  --storybook-background: #1a1a1a;
+  --storybook-text: #003366;
+  --storybook-border: #003366;
+  --storybook-accent: #003366;
+  --storybook-error: #003366;
+  --storybook-success: #003366;
+  --storybook-warning: #003366;
+  --storybook-info: #003366;
+  --storybook-hover: #24527a;
+}
+
+/* Storybook UI elements */
+.sbdocs {
+  color: var(--storybook-text);
+}
+
+.sbdocs a {
+  color: var(--storybook-primary);
+}
+
+.sbdocs a:hover {
+  color: var(--storybook-hover);
+}
+
+.sbdocs h1,
+.sbdocs h2,
+.sbdocs h3,
+.sbdocs h4,
+.sbdocs h5,
+.sbdocs h6 {
+  color: var(--storybook-text);
+}
+
+.sbdocs .sbdocs-nav {
+  background-color: var(--storybook-background);
+  border-color: var(--storybook-border);
+}
+
+.sbdocs .sbdocs-nav a {
+  color: var(--storybook-text);
+}
+
+.sbdocs .sbdocs-nav a:hover {
+  color: var(--storybook-hover);
+}
+
+.sbdocs .sbdocs-nav a.active {
+  color: var(--storybook-primary);
+}
+
+.sbdocs .sbdocs-content {
+  background-color: var(--storybook-background);
+}
+
+.sbdocs .sbdocs-content .sbdocs-story {
+  border-color: var(--storybook-border);
+}
+
+.sbdocs .sbdocs-content .sbdocs-story:hover {
+  border-color: var(--storybook-hover);
+}

@@ -10,15 +10,21 @@
     padding: var(--space3XL) var(--spaceL);
     z-index: var(--zIndex2);
     position: relative;
-    color: var(--textLight);
+    color: #003366;
+    background-color: var(--white);
   }
 
   .link {
     display: inline-flex;
+    color: #003366;
   }
 
   .date {
-    padding-right: var(--spaceXS);
     display: inline-flex;
+    color: #003366;
+  }
+
+  .authorName {
+    color: #003366;
   }
 }

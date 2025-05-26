@@ -12,12 +12,18 @@
 @layer base {
   :global(:root) {
     --mobileNavOffset: calc(var(--spaceOuter) * 2 + var(--space2XL));
+    --fontStack: 'Freight Neo', system-ui, sans-serif;
+    --monoFontStack: 'Freight Mono', monospace;
+    --fontWeightRegular: 400;
+    --fontWeightMedium: 500;
+    --fontWeightBold: 700;
   }
+}
 
   :global(html, body) {
     font-family: var(--fontStack);
     font-weight: var(--fontWeightRegular);
-    background-color: var(--background);
+    background-color: var(--white);
     transition: var(--durationM) ease;
     transition-property: background, opacity;
     color: var(--textBody);
@@ -79,4 +85,3 @@
       transform-origin: right;
     }
   }
-}

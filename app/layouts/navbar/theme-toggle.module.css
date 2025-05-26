@@ -39,7 +39,7 @@
     }
 
     &[data-mask='true'] {
-      fill: white;
+      fill: var(--text);
     }
 
     body[data-theme='dark'] & {

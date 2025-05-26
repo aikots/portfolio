@@ -1,4 +1,9 @@
 @layer layout {
+  .monogram {
+    width: 70px;
+    height: auto;
+  }
+
   .navbar {
     --headerNavFontSize: calc((16 / 16) * 1rem);
 
@@ -130,7 +135,7 @@
     padding: var(--spaceS);
     width: var(--space2XL);
     height: var(--space2XL);
-    color: var(--textLight);
+    color: #003366;
     transition: color var(--durationM) var(--bezierFastoutSlowin);
 
     &:hover,
