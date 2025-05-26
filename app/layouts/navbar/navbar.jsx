@@ -1,5 +1,5 @@
 import { Icon } from '~/components/icon';
-import { Monogram } from '~/components/monogram';
+import { Monogram } from '~/assets/Logo.png';
 import { useTheme } from '~/components/theme-provider';
 import { tokens } from '~/components/theme-provider/theme';
 import { Transition } from '~/components/transition';
