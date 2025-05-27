@@ -76,7 +76,7 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
             )}
             <header className={styles.text}>
               <h1 className={styles.name} data-visible={visible} id={titleId}>
-                <DecoderText text={config.name} delay={500} />
+                <DecoderText text={config.name} delay={500} style={{ color: '#FF9F00' }} />
               </h1>
               <Heading level={0} as="h2" className={styles.title}>
                 <VisuallyHidden className={styles.label}>

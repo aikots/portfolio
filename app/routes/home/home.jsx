@@ -4,6 +4,8 @@ import gamestackTexture2 from '~/assets/gamestack-list.jpg';
 import gamestackTextureLarge from '~/assets/gamestack-login-large.jpg';
 import gamestackTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
 import gamestackTexture from '~/assets/gamestack-login.jpg';
+import eventDetails from '~/assets/Event Details.png';
+import eventBrowsing from '~/assets/Event browsing (scrolled).png';
 import sliceTextureLarge from '~/assets/slice-app-large.jpg';
 import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
 import sliceTexture from '~/assets/slice-app.jpg';
@@ -103,17 +105,21 @@ export const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="Designing the future of education"
-        description="Designing a platform to help educators build better online courseware"
+        title="Stamped"
+        description="An app designed to foster connections between newcomers and locals in Stockholm through at-home events"
         buttonText="View project"
         buttonLink="/projects/smart-sparrow"
         model={{
-          type: 'laptop',
-          alt: 'Smart Sparrow lesson builder',
+          type: 'phone',
+          alt: 'Event browsing interface',
           textures: [
             {
-              srcSet: `${sprTexture} 1280w, ${sprTextureLarge} 2560w`,
-              placeholder: sprTexturePlaceholder,
+              srcSet: `${eventBrowsing} 375w, ${eventBrowsing} 750w`,
+              placeholder: eventBrowsing,
+            },
+            {
+              srcSet: `${eventDetails} 375w, ${eventDetails} 750w`,
+              placeholder: eventDetails,
             },
           ],
         }}
@@ -124,8 +130,8 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Video game progress tracking"
-        description="Design and development for a video game tracking app built in React Native"
+        title="Shoppera"
+        description="An app focusing on discounts of everyday items that provides a higher level of personalization, catering to the users' specific needs from the very first use"
         buttonText="View website"
         buttonLink="https://gamestack.hamishw.com"
         model={{

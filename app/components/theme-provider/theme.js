@@ -127,7 +127,7 @@ const light = {
   error: '#309898',
   text: '#309898',
   textTitle: '#309898',
-  textBody: '#309898',
+  textBody: '#003366', // Navy blue
   textLight: '#309898',
 };
 
