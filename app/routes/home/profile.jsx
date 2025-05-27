@@ -18,18 +18,16 @@ import styles from './profile.module.css';
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
     <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-      <DecoderText text="Hi there" start={visible} delay={500} />
+      <DecoderText text="Hej hej!" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m Katerina, currently I live in Stockholm working as a product designer at{' '}
-      <Link href="https://www.qwilr.com">Qwilr</Link>. My projects include UX design, UI
-      animations, and icon illustration. If you’re interested in the tools and software I
-      use check out my <Link href="/uses">uses page</Link>.
+      I’m Katerina Tsioutsia, a Greek-born, Sweden-based designer blending architecture brains, product sense, and a big love for UX and 3D game art. I’m currently diving deep into an MSc in Interactive Media Technology, where I craft immersive experiences that live at the intersection of design, tech, and storytelling.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      In my spare time I like to draw, play video games, and{' '}
-      <Link href="/projects/volkihar-knight">make read</Link>. I’m always down for hearing
-      about new projects, so feel free to drop me a line.
+      From building spaces to building games, I bring a holistic, hands-on approach to problem-solving. I geek out over sleek interfaces, atmospheric 3D worlds, and, yes—Scandinavian chairs.
+    </Text>
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      Let’s create something bold, beautiful, and maybe a little unexpected. 
     </Text>
   </Fragment>
 );

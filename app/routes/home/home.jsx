@@ -1,17 +1,9 @@
-import gamestackTexture2Large from '~/assets/gamestack-list-large.jpg';
-import gamestackTexture2Placeholder from '~/assets/gamestack-list-placeholder.jpg';
-import gamestackTexture2 from '~/assets/gamestack-list.jpg';
-import gamestackTextureLarge from '~/assets/gamestack-login-large.jpg';
-import gamestackTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
-import gamestackTexture from '~/assets/gamestack-login.jpg';
+import splash2 from '~/assets/Splash 2.png';
+import discovery from '~/assets/Discovery.png';
 import eventDetails from '~/assets/Event Details.png';
 import eventBrowsing from '~/assets/Event browsing (scrolled).png';
-import sliceTextureLarge from '~/assets/slice-app-large.jpg';
-import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
-import sliceTexture from '~/assets/slice-app.jpg';
-import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
-import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
-import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
+import homeScreen from '~/assets/Home Screen.png';
+import initialScreen from '~/assets/Initial Screen.png';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
@@ -136,15 +128,15 @@ export const Home = () => {
         buttonLink="https://gamestack.hamishw.com"
         model={{
           type: 'phone',
-          alt: 'App login screen',
+          alt: 'App screens',
           textures: [
             {
-              srcSet: `${gamestackTexture} 375w, ${gamestackTextureLarge} 750w`,
-              placeholder: gamestackTexturePlaceholder,
+              srcSet: `${splash2} 375w, ${splash2} 750w`,
+              placeholder: splash2,
             },
             {
-              srcSet: `${gamestackTexture2} 375w, ${gamestackTexture2Large} 750w`,
-              placeholder: gamestackTexture2Placeholder,
+              srcSet: `${discovery} 375w, ${discovery} 750w`,
+              placeholder: discovery,
             },
           ],
         }}
@@ -154,17 +146,21 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
+        title="Spotify: Music Discovery Re-design"
+        description="A challenge given by Spotify to review and re-design their new music discovery process throughout the app"
         buttonText="View project"
         buttonLink="/projects/slice"
         model={{
-          type: 'laptop',
+          type: 'phone',
           alt: 'Annotating a biomedical image in the Slice app',
           textures: [
             {
-              srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,
-              placeholder: sliceTexturePlaceholder,
+              srcSet: `${initialScreen} 375w, ${initialScreen} 750w`,
+              placeholder: initialScreen,
+            },
+            {
+              srcSet: `${homeScreen} 375w, ${homeScreen} 750w`,
+              placeholder: homeScreen,
             },
           ],
         }}
