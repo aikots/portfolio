@@ -152,7 +152,7 @@
 .svg {
   opacity: 0;
   transition: opacity 1200ms ease 1400ms;
-  fill: #003366;
+  fill: #FF9F00;
 
   &[data-visible='true'] {
     opacity: var(--opacity);
@@ -200,13 +200,13 @@
 }
 
 .navy-text {
-  color: #309898;
+  color: #FF9F00;
 }
 
 .indexNumber {
   font-size: calc(var(--fontSizeH4) * 2);
   font-weight: var(--fontWeightMedium);
-  color: #309898;
+  color: #FF9F00;
   opacity: 0;
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
