@@ -1,7 +1,9 @@
 @layer components {
   .monogram {
-    fill: var(--textTitle);
+    fill: #309898; /* Your logo color */
     transition: fill var(--durationL) ease;
+    width: 100%;
+    height: 100%;
   }
 
   .highlight {

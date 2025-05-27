@@ -1,6 +1,6 @@
 @layer layout {
   .monogram {
-    width: 70px;
+    width: 100px;
     height: auto;
   }
 
@@ -31,13 +31,12 @@
 
   .logo {
     display: flex;
-    position: relative;
-    padding: var(--spaceS) var(--spaceS) var(--spaceL);
+    position: fixed;
+    top: calc(var(--spaceL) + var(--spaceM));
+    left: var(--inset);
     z-index: var(--zIndex2);
-
-    @media (--mediaMobile) {
-      padding-bottom: var(--spaceS);
-    }
+    padding: var(--spaceXS);
+    margin: 0;
   }
 
   .nav {

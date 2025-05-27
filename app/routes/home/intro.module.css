@@ -5,6 +5,13 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
+  opacity: 0;
+  transition: opacity 0.2s var(--bezierFastoutSlowin);
+  overflow: hidden;
+
+  &[data-visible='true'] {
+    opacity: 1;
+  }
 }
 
 .banner {
@@ -57,7 +64,8 @@
   font-weight: var(--fontWeightMedium);
   line-height: 1;
   opacity: 0;
-  transition: opacity var(--durationL) var(--bezierFastoutSlowin) 0.2s;
+  visibility: hidden;
+  transition: opacity var(--durationL) var(--bezierFastoutSlowin);
 
   @media (--mediaLaptop) {
     font-size: calc((22 / 16) * 1rem);
@@ -82,6 +90,7 @@
 
   &[data-visible='true'] {
     opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -106,11 +115,11 @@
     opacity: 0;
   }
 
-  50% {
+  10% {
     opacity: 0;
   }
 
-  60% {
+  20% {
     opacity: 1;
   }
 
@@ -130,7 +139,6 @@
   animation-fill-mode: forwards;
   animation-timing-function: var(--bezierFastoutSlowin);
   color: #FF9F00; /* Orange */
-  transition: opacity 0.5s ease var(--durationM);
   isolation: isolate;
   isolation: isolate;
 
