@@ -57,10 +57,13 @@
   transform: translate3d(0, 0, 0);
 }
 
+.orange-text {
+  color: #FF9F00;
+}
+
 .title {
   white-space: nowrap;
   margin-bottom: var(--spaceL);
-  color: #003366;
   opacity: 0;
   transition: opacity var(--durationXL) ease var(--durationM);
 

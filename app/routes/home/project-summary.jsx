@@ -38,7 +38,7 @@ export function ProjectSummary({
   const isHydrated = useHydrated();
   const titleId = `${id}-title`;
   const isMobile = width <= media.tablet;
-  const svgOpacity = theme === 'light' ? 0.7 : 1;
+  const svgOpacity = theme === 'light' ? 0.3 : 0.3;
   const indexText = index < 10 ? `0${index}` : index;
   const phoneSizes = `(max-width: ${media.tablet}px) 30vw, 20vw`;
   const laptopSizes = `(max-width: ${media.tablet}px) 80vw, 40vw`;
@@ -86,7 +86,7 @@ export function ProjectSummary({
         >
           {title}
         </Heading>
-        <Text className={[styles.description, styles.navyText, styles.projectSummary].join(' ')} data-visible={visible} as="p">
+        <Text className={styles.description} data-visible={visible} as="p">
           {description}
         </Text>
         <div className={styles.button} data-visible={visible}>

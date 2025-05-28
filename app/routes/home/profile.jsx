@@ -17,7 +17,7 @@ import styles from './profile.module.css';
 
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
-    <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
+    <Heading className={`${styles.title} ${styles.orangeText}`} data-visible={visible} level={3} id={titleId}>
       <DecoderText text="Hej hej!" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">

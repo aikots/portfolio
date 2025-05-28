@@ -9,7 +9,7 @@
   .glyph {
     color: #FF9F00; /* Orange */
     opacity: 0.8;
-    font-weight: var(--fontWeightRegular);
+    font-weight: var(--fontWeightBold);
     font-family: var(--japaneseFontStack);
     line-height: 0;
   }

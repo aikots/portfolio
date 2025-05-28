@@ -10,10 +10,26 @@
 @custom-media --mediaNoTouch (pointer: fine);
 
 @layer base {
+  @font-face {
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../assets/fonts/Nunito-Regular.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../assets/fonts/Nunito-SemiBold.woff') format('woff');
+  }
+
   :global(:root) {
     --mobileNavOffset: calc(var(--spaceOuter) * 2 + var(--space2XL));
-    --fontStack: 'Freight Neo', system-ui, sans-serif;
-    --monoFontStack: 'Freight Mono', monospace;
+    --fontStack: 'Nunito', system-ui, sans-serif;
+    --fontStackFreight: 'Nunito', system-ui, sans-serif;
+    --monoFontStack: 'Nunito', monospace;
+    --japaneseFontStack: 'IPA Gothic', system-ui, sans-serif;
     --fontWeightRegular: 400;
     --fontWeightMedium: 500;
     --fontWeightBold: 700;

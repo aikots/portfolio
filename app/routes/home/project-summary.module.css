@@ -205,7 +205,7 @@
 
 .indexNumber {
   font-size: calc(var(--fontSizeH4) * 2);
-  font-weight: var(--fontWeightMedium);
+  font-weight: var(--fontWeightBold);
   color: #FF9F00;
   opacity: 0;
   transition-property: opacity;
@@ -222,6 +222,12 @@
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+.projectSummary {
+  font-family: var(--fontStack) !important;
+  font-weight: 300;
+  color: var(--textBody) !important;
 }
 
 .title {
