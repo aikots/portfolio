@@ -11,7 +11,7 @@ export const deviceModels = {
     url: iphone11,
     width: 374,
     height: 512,
-    position: { x: 0, y: 0, z: 0 },
+    position: { x: 1, y: 0, z: 0 },
     animation: ModelAnimationType.SpringUp,
   },
   laptop: {

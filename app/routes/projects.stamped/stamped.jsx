@@ -1,15 +1,10 @@
-import backgroundSprLarge from '~/assets/spr-background-large.jpg';
-import backgroundSprPlaceholder from '~/assets/spr-background-placeholder.jpg';
-import imageSprBackgroundVolcanismLarge from '~/assets/spr-background-volcanism-large.jpg';
-import imageSprBackgroundVolcanismPlaceholder from '~/assets/spr-background-volcanism-placeholder.jpg';
-import imageSprBackgroundVolcanism from '~/assets/spr-background-volcanism.jpg';
-import backgroundSpr from '~/assets/spr-background.jpg';
 import imageSprComponentsDarkLarge from '~/assets/spr-components-dark-large.png';
 import imageSprComponentsDarkPlaceholder from '~/assets/spr-components-dark-placeholder.png';
 import imageSprComponentsDark from '~/assets/spr-components-dark.png';
 import imageSprComponentsLightLarge from '~/assets/spr-components-light-large.png';
 import imageSprComponentsLightPlaceholder from '~/assets/spr-components-light-placeholder.png';
 import imageSprComponentsLight from '~/assets/spr-components-light.png';
+import { deviceModels } from '~/components/model/device-models';
 import imageSprDesignSystemDarkLarge from '~/assets/spr-design-system-dark-large.png';
 import imageSprDesignSystemDarkPlaceholder from '~/assets/spr-design-system-dark-placeholder.png';
 import imageSprDesignSystemDark from '~/assets/spr-design-system-dark.png';
@@ -49,7 +44,6 @@ import { Link } from '~/components/link';
 import { SegmentedControl, SegmentedControlOption } from '~/components/segmented-control';
 import { ThemeProvider, useTheme } from '~/components/theme-provider';
 import {
-  ProjectBackground,
   ProjectContainer,
   ProjectHeader,
   ProjectImage,
@@ -63,30 +57,30 @@ import {
 import { baseMeta } from '~/utils/meta';
 import { Suspense, lazy, useMemo } from 'react';
 import { media } from '~/utils/style';
-import styles from './smart-sparrow.module.css';
+import styles from './stamped.module.css';
 
 const Earth = lazy(() => import('./earth').then(module => ({ default: module.Earth })));
 const EarthSection = lazy(() =>
   import('./earth').then(module => ({ default: module.EarthSection }))
 );
 
-const title = 'Designing the future of education';
+const title = 'Stamped: Fostering Multicultural Connections';
 const description =
-  'I worked as the design lead on a major iteration of Smart Sparrow’s product. We took the platform in a bold new direction, focusing on becoming the best tool for learning designers.';
+  'Me and my group designed and developed Stamped, an app that connects newcomers with locals in Stockholm through unique at-home events.';
 const roles = [
-  'Art Direction',
-  'UX and UI Design',
-  'Front End Development',
-  'Motion Design',
+  'Course Project: Media Technology and Interaction Design',
+  'Group: 4 designers',
+  'Role: Concept & Design',
+  'Date: 2023',
 ];
 
 export const meta = () => {
   return baseMeta({ title, description, prefix: 'Projects' });
 };
 
-export const SmartSparrow = () => {
+export const Stamped = () => {
   const { theme, toggleTheme } = useTheme();
-  const isDark = theme === 'dark';
+  const isDark = theme === 'light';
   const themes = ['dark', 'light'];
 
   const handleThemeChange = index => {
@@ -95,20 +89,16 @@ export const SmartSparrow = () => {
 
   return (
     <>
-      <ProjectContainer>
-        <ProjectBackground
-          opacity={isDark ? 0.5 : 0.8}
-          src={backgroundSpr}
-          srcSet={`${backgroundSpr} 1080w, ${backgroundSprLarge} 2160w`}
-          placeholder={backgroundSprPlaceholder}
-        />
+      <ProjectContainer className={styles.projectContainer} style={{ backgroundColor: '#F0E4CC' }}>
         <ProjectHeader
           title={title}
           description={description}
-          url="https://www.smartsparrow.com/"
+          url="https://www.stamped.com/"
           roles={roles}
+          data-light="true"
+          phoneImage={isDark ? imageSprComponentsDark : imageSprComponentsLight}
         />
-        <ProjectSection padding="top">
+        <ProjectSection padding="top" data-light="true">
           <ProjectSectionContent>
             <ProjectImage
               raised
@@ -125,8 +115,8 @@ export const SmartSparrow = () => {
                   ? imageSprLessonBuilderDarkPlaceholder
                   : imageSprLessonBuilderLightPlaceholder
               }
+              alt="The Stamped event builder interface showing a user creating a cooking event."
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
-              alt="The aero lesson builder app dragging an audio component into a screen about plant cells."
             />
           </ProjectSectionContent>
         </ProjectSection>
@@ -144,7 +134,7 @@ export const SmartSparrow = () => {
             </ProjectSectionText>
           </ProjectTextRow>
         </ProjectSection>
-        <ProjectSection light={isDark}>
+        <ProjectSection light={isDark} data-light="true">
           <ProjectSectionContent>
             <Image
               key={theme}
@@ -154,13 +144,13 @@ export const SmartSparrow = () => {
                   : `${imageSprComponentsLight} 1024w, ${imageSprComponentsLightLarge} 2048w`
               }
               width={1024}
-              hright={800}
+              height={800}
               placeholder={
                 isDark
                   ? imageSprComponentsDarkPlaceholder
                   : imageSprComponentsLightPlaceholder
               }
-              alt={`A set of ${theme} themed components for the aero design system`}
+              alt={`A set of ${theme} themed components for the Stamped design system`}
               sizes="100vw"
             />
             <ProjectTextRow>
@@ -173,7 +163,7 @@ export const SmartSparrow = () => {
               </SegmentedControl>
             </ProjectTextRow>
             <ProjectTextRow>
-              <ProjectSectionHeading>The aero design system</ProjectSectionHeading>
+              <ProjectSectionHeading>The Stamped design system</ProjectSectionHeading>
               <ProjectSectionText>
                 To streamline the design process across designers and engineers for such a
                 large project, it was important to lay the foundations with a strong,
@@ -201,7 +191,7 @@ export const SmartSparrow = () => {
                   ? imageSprDesignSystemDarkPlaceholder
                   : imageSprDesignSystemLightPlaceholder
               }
-              alt="The homepage of the aero design system docs website linking to principles and components."
+              alt="A schema showing the Stamped design system components and their relationships"
               sizes="100vw"
             />
             <ProjectTextRow>
@@ -218,16 +208,7 @@ export const SmartSparrow = () => {
         <ThemeProvider theme="dark" data-invert>
           <ProjectSection
             backgroundOverlayOpacity={0.5}
-            backgroundElement={
-              <Image
-                srcSet={`${imageSprBackgroundVolcanism} 1280w, ${imageSprBackgroundVolcanismLarge} 2560w`}
-                width={1280}
-                height={900}
-                placeholder={imageSprBackgroundVolcanismPlaceholder}
-                alt="A dramatic ocean scene with lava forming a new land mass."
-                sizes="100vw"
-              />
-            }
+            style={{ backgroundColor: '#f5f5d4' }}
           >
             <ProjectSectionColumns width="full">
               <ProjectSectionContent width="full">

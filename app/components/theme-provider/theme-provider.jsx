@@ -79,10 +79,18 @@ export function createMediaTokenProperties() {
   return squish(
     Object.keys(media)
       .map(key => {
+        const tokenKey = key === 'desktop' ? 'desktop' : 
+                   key === 'laptop' ? 'laptop' : 
+                   key === 'tablet' ? 'tablet' : 
+                   key === 'mobile' ? 'mobile' : 
+                   key === 'mobileS' ? 'mobileS' : null;
+
+        if (!tokenKey) return '';
+
         return `
         @media (max-width: ${media[key]}px) {
           :root {
-            ${createThemeProperties(tokens[key])}
+            ${createThemeProperties(tokens[tokenKey])}
           }
         }
       `;
@@ -98,6 +106,7 @@ const layerStyles = squish(`
 const tokenStyles = squish(`
   :root {
     ${createThemeProperties(tokens.base)}
+    ${createThemeProperties(tokens.light)}
   }
 
   ${createMediaTokenProperties()}

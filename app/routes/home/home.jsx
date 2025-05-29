@@ -100,7 +100,7 @@ export const Home = () => {
         title="Stamped"
         description="An app designed to foster connections between newcomers and locals in Stockholm through at-home events"
         buttonText="View project"
-        buttonLink="/projects/smart-sparrow"
+        buttonLink="/projects/stamped"
         model={{
           type: 'phone',
           alt: 'Event browsing interface',

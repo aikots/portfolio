@@ -8,6 +8,8 @@ import { Transition } from '~/components/transition';
 import { useParallax } from '~/hooks';
 import { forwardRef, useRef } from 'react';
 import { classes, cssProps, msToNum, numToMs } from '~/utils/style';
+import { Model } from '~/components/model';
+import { deviceModels } from '~/components/model/device-models';
 import styles from './project.module.css';
 
 const initDelay = 300;
@@ -19,45 +21,66 @@ export function ProjectHeader({
   url,
   roles,
   className,
+  phoneImage,
 }) {
   return (
-    <Section className={classes(styles.header, className)} as="section">
-      <div
-        className={styles.headerContent}
-        style={cssProps({ initDelay: numToMs(initDelay) })}
-      >
-        <div className={styles.details}>
-          <Heading className={styles.title} level={2} as="h1">
+    <Section className={classes(styles.header, className)} as="section" style={cssProps({
+      initDelay: numToMs(initDelay),
+    })}>
+      <div className={styles.headerContent}>
+        <div className={styles.textColumn}>
+          <Heading className={styles.title} level={2} as="h1" weight="bold">
             {title}
           </Heading>
           <Text className={styles.description} size="xl" as="p">
             {description}
           </Text>
-          {!!url && (
-            <Button
-              secondary
-              iconHoverShift
-              className={styles.linkButton}
-              icon="chevron-right"
-              href={url}
-            >
-              {linkLabel}
-            </Button>
-          )}
-        </div>
-        {!!roles?.length && (
-          <ul className={styles.meta}>
+          <div className={styles.roles}>
             {roles?.map((role, index) => (
-              <li
-                className={styles.metaItem}
-                style={cssProps({ delay: numToMs(initDelay + 300 + index * 140) })}
-                key={role}
-              >
-                <Text secondary>{role}</Text>
-              </li>
+              <p key={role}>{role}</p>
             ))}
-          </ul>
-        )}
+          </div>
+          <div className={styles.buttonWrapper}>
+            {!!url && (
+              <Button
+                secondary
+                iconHoverShift
+                className={styles.linkButton}
+                icon="chevron-right"
+                href={url}
+              >
+                {linkLabel}
+              </Button>
+            )}
+          </div>
+        </div>
+        <div className={styles.modelColumn}>
+          <div className={styles.phoneWrapper}>
+            <Model
+              alt="Phone model"
+              style={{
+                width: '600px',
+                height: '840px',
+                position: 'relative',
+                marginTop: '-20px',
+                marginLeft: '-50px',
+              }}
+              cameraPosition={{ x: 0, y: 0, z: 11.5 }}
+              models={[
+                {
+                  ...deviceModels.phone,
+                  position: { x: -0.2, y: 1.2, z: 0.1 },
+                  height: '840px',
+                  texture: {
+                    srcSet: `${phoneImage} 375w, ${phoneImage} 750w`,
+                    placeholder: phoneImage,
+                  },
+                }
+              ]}
+              fallback={<div className={styles.phoneLoader} />}
+            />
+          </div>
+        </div>
       </div>
     </Section>
   );

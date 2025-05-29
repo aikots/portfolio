@@ -1,0 +1,71 @@
+.projectBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.projectImage {
+  width: 100%;
+  height: auto;
+}
+
+.navyText {
+  color: #003366;
+}
+
+.projectContainer {
+  color: #003366;
+}
+
+.projectSection {
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  .projectSection {
+    padding: 2rem 0;
+  }
+}
+
+.projectSectionContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.projectSectionText {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .projectSectionText {
+    font-size: 1rem;
+  }
+}
+
+.projectTextRow {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .projectTextRow {
+    flex-direction: column;
+  }
+}
+
+.projectTextRow {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .projectTextRow {
+    flex-direction: column;
+  }
+}

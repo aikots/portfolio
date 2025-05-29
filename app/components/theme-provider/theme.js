@@ -120,15 +120,43 @@ const dark = {
 };
 
 const light = {
-  background: 'oklch(96.12% 0.02 200)',
-  backgroundLight: 'var(--white)',
-  primary: '#309898',
-  accent: '#309898',
-  error: '#309898',
-  text: '#309898',
-  textTitle: '#309898',
-  textBody: '#003366', // Navy blue
-  textLight: '#309898',
+  background: '#ffffff',
+  backgroundLight: '#ffffff',
+  backgroundDark: '#ffffff',
+  backgroundAccent: '#ffffff',
+  backgroundAccentLight: '#ffffff',
+  backgroundAccentDark: '#ffffff',
+  text: '#003366',
+  textTitle: '#003366',
+  textBody: '#003366',
+  textLight: '#003366',
+  textDark: '#003366',
+  textSecondary: '#003366',
+  textMuted: '#003366',
+  textPrimary: '#003366',
+  textHighlight: '#003366',
+  textInverse: '#003366',
+  textLink: '#003366',
+  textLinkHover: '#003366',
+  textPlaceholder: '#003366',
+  textDisabled: '#003366',
+  textError: '#003366',
+  textSuccess: '#003366',
+  textWarning: '#003366',
+  textInfo: '#003366',
+  white: '#ffffff',
+  black: '#000000',
+  primary: '#003366',
+  secondary: '#003366',
+  accent: '#003366',
+  success: '#003366',
+  warning: '#003366',
+  error: '#003366',
+  info: '#003366',
+  border: '#003366',
+  shadow: 'rgba(0, 0, 0, 0.1)',
+  overlay: 'rgba(0, 0, 0, 0.5)',
+  gradient: 'linear-gradient(135deg, #ffffff 0%, #ffffff 100%)',
 };
 
 export const tokens = {
@@ -138,6 +166,8 @@ export const tokens = {
   tablet: tokensTablet,
   mobile: tokensMobile,
   mobileS: tokensMobileSmall,
+  light,
+  dark
 };
 
 export const themes = { dark, light };
