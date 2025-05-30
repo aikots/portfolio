@@ -1,40 +1,22 @@
-import imageSprComponentsDarkLarge from '~/assets/spr-components-dark-large.png';
-import imageSprComponentsDarkPlaceholder from '~/assets/spr-components-dark-placeholder.png';
-import imageSprComponentsDark from '~/assets/spr-components-dark.png';
+import videoStamped4 from '~/assets/Stamped4.mp4';
 import imageSprComponentsLightLarge from '~/assets/spr-components-light-large.png';
 import imageSprComponentsLightPlaceholder from '~/assets/spr-components-light-placeholder.png';
-import imageSprComponentsLight from '~/assets/spr-components-light.png';
 import { deviceModels } from '~/components/model/device-models';
-import imageSprDesignSystemDarkLarge from '~/assets/spr-design-system-dark-large.png';
-import imageSprDesignSystemDarkPlaceholder from '~/assets/spr-design-system-dark-placeholder.png';
-import imageSprDesignSystemDark from '~/assets/spr-design-system-dark.png';
 import imageSprDesignSystemLightLarge from '~/assets/spr-design-system-light-large.png';
 import imageSprDesignSystemLightPlaceholder from '~/assets/spr-design-system-light-placeholder.png';
 import imageSprDesignSystemLight from '~/assets/spr-design-system-light.png';
-import imageSprLessonBuilderDarkLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
-import imageSprLessonBuilderDarkPlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
-import imageSprLessonBuilderDark from '~/assets/spr-lesson-builder-dark.jpg';
 import imageSprLessonBuilderLightLarge from '~/assets/spr-lesson-builder-light-large.jpg';
 import imageSprLessonBuilderLightPlaceholder from '~/assets/spr-lesson-builder-light-placeholder.jpg';
 import imageSprLessonBuilderLight from '~/assets/spr-lesson-builder-light.jpg';
 import videoSprMotionLarge from '~/assets/spr-motion-large.mp4';
 import videoSprMotionPlaceholder from '~/assets/spr-motion-placeholder.jpg';
 import videoSprMotion from '~/assets/spr-motion.mp4';
-import imageSprSchema1DarkLarge from '~/assets/spr-schema-1-dark-large.png';
-import imageSprSchema1DarkPlaceholder from '~/assets/spr-schema-1-dark-placeholder.png';
-import imageSprSchema1Dark from '~/assets/spr-schema-1-dark.png';
 import imageSprSchema1LightLarge from '~/assets/spr-schema-1-light-large.png';
 import imageSprSchema1LightPlaceholder from '~/assets/spr-schema-1-light-placeholder.png';
 import imageSprSchema1Light from '~/assets/spr-schema-1-light.png';
-import imageSprSchema2DarkLarge from '~/assets/spr-schema-2-dark-large.png';
-import imageSprSchema2DarkPlaceholder from '~/assets/spr-schema-2-dark-placeholder.png';
-import imageSprSchema2Dark from '~/assets/spr-schema-2-dark.png';
 import imageSprSchema2LightLarge from '~/assets/spr-schema-2-light-large.png';
 import imageSprSchema2LightPlaceholder from '~/assets/spr-schema-2-light-placeholder.png';
 import imageSprSchema2Light from '~/assets/spr-schema-2-light.png';
-import imageSprStoryboarderDarkLarge from '~/assets/spr-storyboarder-dark-large.png';
-import imageSprStoryboarderDarkPlaceholder from '~/assets/spr-storyboarder-dark-placeholder.png';
-import imageSprStoryboarderDark from '~/assets/spr-storyboarder-dark.png';
 import imageSprStoryboarderLightLarge from '~/assets/spr-storyboarder-light-large.png';
 import imageSprStoryboarderLightPlaceholder from '~/assets/spr-storyboarder-light-placeholder.png';
 import imageSprStoryboarderLight from '~/assets/spr-storyboarder-light.png';
@@ -66,11 +48,11 @@ const EarthSection = lazy(() =>
 
 const title = 'Stamped: Fostering Multicultural Connections';
 const description =
-  'Me and my group designed and developed Stamped, an app that connects newcomers with locals in Stockholm through unique at-home events.';
+  'Me and my group designed Stamped, an app that connects newcomers with locals in Stockholm through unique at-home events.';
 const roles = [
   'Course Project: Media Technology and Interaction Design',
   'Group: 4 designers',
-  'Role: Concept & Design',
+  'Role: Concept Ideation, Research, UI/UX Design',
   'Date: 2023',
 ];
 
@@ -79,12 +61,10 @@ export const meta = () => {
 };
 
 export const Stamped = () => {
-  const { theme, toggleTheme } = useTheme();
-  const isDark = theme === 'light';
-  const themes = ['dark', 'light'];
+  const { toggleTheme } = useTheme();
 
-  const handleThemeChange = index => {
-    toggleTheme(themes[index]);
+  const handleThemeChange = () => {
+    toggleTheme('light');
   };
 
   return (
@@ -96,25 +76,17 @@ export const Stamped = () => {
           url="https://www.stamped.com/"
           roles={roles}
           data-light="true"
-          phoneImage={isDark ? imageSprComponentsDark : imageSprComponentsLight}
+          videoSrc={videoStamped4}
         />
         <ProjectSection padding="top" data-light="true">
           <ProjectSectionContent>
             <ProjectImage
               raised
-              key={theme}
-              srcSet={
-                isDark
-                  ? `${imageSprLessonBuilderDark} 1280w, ${imageSprLessonBuilderDarkLarge} 2560w`
-                  : `${imageSprLessonBuilderLight} 1280w, ${imageSprLessonBuilderLightLarge} 2560w`
-              }
+              key="light"
+              srcSet={`${imageSprLessonBuilderLight} 1280w, ${imageSprLessonBuilderLightLarge} 2560w`}
               width={1280}
               height={800}
-              placeholder={
-                isDark
-                  ? imageSprLessonBuilderDarkPlaceholder
-                  : imageSprLessonBuilderLightPlaceholder
-              }
+              placeholder={imageSprLessonBuilderLightPlaceholder}
               alt="The Stamped event builder interface showing a user creating a cooking event."
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
             />
@@ -134,31 +106,22 @@ export const Stamped = () => {
             </ProjectSectionText>
           </ProjectTextRow>
         </ProjectSection>
-        <ProjectSection light={isDark} data-light="true">
+        <ProjectSection data-light="true">
           <ProjectSectionContent>
             <Image
-              key={theme}
-              srcSet={
-                isDark
-                  ? `${imageSprComponentsDark} 1024w, ${imageSprComponentsDarkLarge} 2048w`
-                  : `${imageSprComponentsLight} 1024w, ${imageSprComponentsLightLarge} 2048w`
-              }
+              key="light"
+              srcSet={`${imageSprComponentsLightLarge} 1024w, ${imageSprComponentsLightLarge} 2048w`}
               width={1024}
               height={800}
-              placeholder={
-                isDark
-                  ? imageSprComponentsDarkPlaceholder
-                  : imageSprComponentsLightPlaceholder
-              }
-              alt={`A set of ${theme} themed components for the Stamped design system`}
+              placeholder={imageSprComponentsLightPlaceholder}
+              alt="A set of light themed components for the Stamped design system"
               sizes="100vw"
             />
             <ProjectTextRow>
               <SegmentedControl
-                currentIndex={themes.indexOf(theme)}
+                currentIndex={0}
                 onChange={handleThemeChange}
               >
-                <SegmentedControlOption>Dark theme</SegmentedControlOption>
                 <SegmentedControlOption>Light theme</SegmentedControlOption>
               </SegmentedControl>
             </ProjectTextRow>
@@ -178,19 +141,11 @@ export const Stamped = () => {
           <ProjectSectionContent>
             <Image
               raised
-              key={theme}
-              srcSet={
-                isDark
-                  ? `${imageSprDesignSystemDark} 1280w, ${imageSprDesignSystemDarkLarge} 2560w`
-                  : `${imageSprDesignSystemLight} 1280w, ${imageSprDesignSystemLightLarge} 2560w`
-              }
+              key="light"
+              srcSet={`${imageSprDesignSystemLight} 1280w, ${imageSprDesignSystemLightLarge} 2560w`}
               width={1280}
               height={800}
-              placeholder={
-                isDark
-                  ? imageSprDesignSystemDarkPlaceholder
-                  : imageSprDesignSystemLightPlaceholder
-              }
+              placeholder={imageSprDesignSystemLightPlaceholder}
               alt="A schema showing the Stamped design system components and their relationships"
               sizes="100vw"
             />
@@ -249,19 +204,11 @@ export const Stamped = () => {
             </ProjectTextRow>
             <Image
               raised
-              key={theme}
-              srcSet={
-                isDark
-                  ? `${imageSprStoryboarderDark} 1280w, ${imageSprStoryboarderDarkLarge} 2560w`
-                  : `${imageSprStoryboarderLight} 1280w, ${imageSprStoryboarderLightLarge} 2560w`
-              }
+              key="light"
+              srcSet={`${imageSprStoryboarderLight} 1280w, ${imageSprStoryboarderLightLarge} 2560w`}
               width={1280}
               height={800}
-              placeholder={
-                isDark
-                  ? imageSprStoryboarderDarkPlaceholder
-                  : imageSprStoryboarderLightPlaceholder
-              }
+              placeholder={imageSprStoryboarderLightPlaceholder}
               alt="A drag and drop storyboard style editor for creating an adaptive lesson."
               sizes={`(max-width: ${media.mobile}px) 100vw, 80vw`}
             />
@@ -286,35 +233,19 @@ export const Stamped = () => {
             <div className={styles.sidebarImages}>
               <Image
                 className={styles.sidebarImage}
-                srcSet={
-                  isDark
-                    ? `${imageSprSchema2Dark} 260w, ${imageSprSchema2DarkLarge} 520w`
-                    : `${imageSprSchema2Light} 260w, ${imageSprSchema2LightLarge} 520w`
-                }
+                srcSet={`${imageSprSchema2Light} 260w, ${imageSprSchema2LightLarge} 520w`}
                 width={260}
                 height={660}
-                placeholder={
-                  isDark
-                    ? imageSprSchema2DarkPlaceholder
-                    : imageSprSchema2LightPlaceholder
-                }
+                placeholder={imageSprSchema2LightPlaceholder}
                 alt="Configuration options for a component."
                 sizes={`(max-width: ${media.mobile}px) 50vw, 25vw`}
               />
               <Image
                 className={styles.sidebarImage}
-                srcSet={
-                  isDark
-                    ? `${imageSprSchema1Dark} 260w, ${imageSprSchema1DarkLarge} 520w`
-                    : `${imageSprSchema1Light} 260w, ${imageSprSchema1LightLarge} 520w`
-                }
+                srcSet={`${imageSprSchema1Light} 260w, ${imageSprSchema1LightLarge} 520w`}
                 width={260}
                 height={660}
-                placeholder={
-                  isDark
-                    ? imageSprSchema1DarkPlaceholder
-                    : imageSprSchema1LightPlaceholder
-                }
+                placeholder={imageSprSchema1LightPlaceholder}
                 alt="Configuration options for text."
                 sizes={`(max-width: ${media.mobile}px) 50vw, 25vw`}
               />

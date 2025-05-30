@@ -35,6 +35,7 @@
     position: relative;
     display: grid;
     place-content: stretch;
+    padding-bottom: 0;
   }
 
   .section[data-full-height='true'] {
@@ -169,8 +170,112 @@
   }
 
   .header {
+    min-height: 400px;
     padding-top: calc(var(--space5XL) + var(--space3XL));
     padding-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    position: relative;
+
+    .headerContent {
+      display: flex;
+      gap: var(--space4XL);
+      max-width: 1200px;
+      margin: 0;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-left: 0;
+      padding-right: var(--spaceL);
+      position: relative;
+      top: -var(--space2XL);
+
+      @media (--mediaMobile) {
+        flex-direction: column;
+      }
+    }
+
+    .textColumn {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spaceXS);
+      width: 600px;
+      margin-top: -var(--space4XL);
+      margin-left: var(--space6XL);
+      margin-bottom: -var(--spaceXS);
+      position: relative;
+      top: 0;
+      width: 100%;
+      max-width: 600px;
+      margin-top: var(--spaceXS);
+    }
+
+    .roles {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spaceXS);
+      position: relative;
+      top: 0;
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: -var(--spaceXS);
+    }
+
+    .roleItem {
+      margin: 0;
+      font-size: var(--textL);
+      line-height: 1.4;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .phoneFrame {
+      position: relative;
+      width: 260px;
+      height: 550px;
+      align-self: center;
+      border-radius: 30px;
+      overflow: hidden;
+      background: transparent;
+      z-index: 2;
+      margin-left: 20px;
+      margin-top: -30px;
+      
+      /* Phone frame styling */
+      border: 2px solid #003366;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      
+      /* Add a subtle gradient to the border */
+      background: linear-gradient(145deg, transparent 0%, transparent 2px, #003366 2px, #003366 4px, transparent 4px);
+      
+      /* Add a subtle inner shadow for depth */
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .videoColumn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      overflow: hidden;
+      border-radius: 28px;
+    }
+
+    .video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: transparent;
+      border-radius: 28px;
+      margin: auto;
+    }
 
     @media (--mediaLaptop) {
       padding-top: var(--space5XL);
@@ -181,71 +286,10 @@
       padding: var(--space2XL) 0;
       position: relative;
       overflow: hidden;
-      background-color: var(--white);
       z-index: 1;
+    }
 
-      .headerContent {
-        display: flex;
-        gap: var(--space2XL);
-        max-width: 1400px;
-        margin: 0 auto;
-        align-items: flex-start;
-        margin-left: -200px;
-
-        @media (--mediaMobile) {
-          flex-direction: column;
-          margin-left: 0;
-        }
-      }
-
-      .textColumn {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space2XL);
-        width: 900px;
-      }
-
-      .modelColumn {
-        position: relative;
-        width: 500px;
-        min-height: 700px;
-        align-self: flex-start;
-      }
-
-      .phoneWrapper {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: 1;
-        margin-left: auto;
-
-        @media (--mediaMobile) {
-          position: static;
-          margin-top: var(--space2XL);
-          width: 100%;
-          max-width: 600px;
-        }
-      }
-
-      .modelContainer {
-        position: relative;
-        width: 100%;
-        height: 100%;
-      }
-
-      .modelCanvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      .metaWrapper {
-        grid-column: 1;
-      }
-
+    @media (--mediaTablet) {
       .buttonWrapper {
         position: relative;
         width: 300px;
@@ -282,6 +326,14 @@
 
       @media (--mediaMobile) {
         padding-right: 0;
+      }
+
+      &:only-child {
+        grid-column: 1 / span 2;
+
+        @media (--mediaTablet) {
+          grid-column: 1;
+        }
       }
     }
   }
@@ -479,8 +531,9 @@
 
   .sectionText {
     + a,
-    + & {
+    .description {
       margin-top: var(--spaceL);
+      margin-bottom: var(--spaceXS);
     }
   }
 

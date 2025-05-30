@@ -21,7 +21,7 @@ export function ProjectHeader({
   url,
   roles,
   className,
-  phoneImage,
+  videoSrc,
 }) {
   return (
     <Section className={classes(styles.header, className)} as="section" style={cssProps({
@@ -37,7 +37,7 @@ export function ProjectHeader({
           </Text>
           <div className={styles.roles}>
             {roles?.map((role, index) => (
-              <p key={role}>{role}</p>
+              <p key={role} className={styles.roleItem}>{role}</p>
             ))}
           </div>
           <div className={styles.buttonWrapper}>
@@ -54,30 +54,22 @@ export function ProjectHeader({
             )}
           </div>
         </div>
-        <div className={styles.modelColumn}>
-          <div className={styles.phoneWrapper}>
-            <Model
-              alt="Phone model"
+        <div className={styles.phoneFrame}>
+          <div className={styles.videoColumn}>
+            <video
+              className={styles.video}
+              src={videoSrc}
+              loop
+              muted
+              playsInline
+              autoPlay
+              width="550"
+              height="550"
               style={{
-                width: '600px',
-                height: '840px',
-                position: 'relative',
-                marginTop: '-20px',
-                marginLeft: '-50px',
+                borderRadius: '14px',
+                objectFit: 'cover',
+                overflow: 'hidden'
               }}
-              cameraPosition={{ x: 0, y: 0, z: 11.5 }}
-              models={[
-                {
-                  ...deviceModels.phone,
-                  position: { x: -0.2, y: 1.2, z: 0.1 },
-                  height: '840px',
-                  texture: {
-                    srcSet: `${phoneImage} 375w, ${phoneImage} 750w`,
-                    placeholder: phoneImage,
-                  },
-                }
-              ]}
-              fallback={<div className={styles.phoneLoader} />}
             />
           </div>
         </div>
