@@ -54,6 +54,7 @@ export function ProjectHeader({
             )}
           </div>
         </div>
+        <div className={styles.katakanaText}>スタンプド</div>
         <div className={styles.phoneFrame}>
           <div className={styles.videoColumn}>
             <video
