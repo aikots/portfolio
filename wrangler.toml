@@ -1,7 +1,3 @@
-kv_namespaces = [
-  { id = "MY_KV", binding="MY_KV" }
-]
-
 compatibility_date = "2025-07-01"
 
 [assets]
