@@ -17,7 +17,7 @@ const initDelay = 300;
 export function ProjectHeader({
   title,
   description,
-  linkLabel = 'Visit website',
+  linkLabel = 'View Prototype',
   url,
   roles,
   className,
@@ -35,11 +35,19 @@ export function ProjectHeader({
           <Text className={styles.description} size="xl" as="p">
             {description}
           </Text>
-          <div className={styles.roles}>
-            {roles?.map((role, index) => (
-              <p key={role} className={styles.roleItem}>{role}</p>
-            ))}
-          </div>
+          {!!roles?.length && (
+            <div className={styles.roles}>
+              {roles?.map((role, index) => (
+                <p
+                  key={role}
+                  className={styles.roleItem}
+                  style={cssProps({ delay: numToMs(initDelay + 300 + index * 140) })}
+                >
+                  {role}
+                </p>
+              ))}
+            </div>
+          )}
           <div className={styles.buttonWrapper}>
             {!!url && (
               <Button
@@ -55,23 +63,24 @@ export function ProjectHeader({
           </div>
         </div>
         <div className={styles.katakanaText}>スタンプド</div>
-        <div className={styles.phoneFrame}>
-          <div className={styles.videoColumn}>
-            <video
-              className={styles.video}
-              src={videoSrc}
-              loop
-              muted
-              playsInline
-              autoPlay
-              width="550"
-              height="550"
-              style={{
-                borderRadius: '14px',
-                objectFit: 'cover',
-                overflow: 'hidden'
-              }}
-            />
+        <div className={styles.phoneFrame} data-visible="true">
+          <div className={styles.videoWrapper}>
+            <div className={styles.videoColumn} data-visible="true">
+              <video
+                className={styles.video}
+                src={videoSrc}
+                loop
+                muted
+                playsInline
+                autoPlay
+                width="550"
+                height="550"
+                style={{
+                  objectFit: 'cover',
+                  overflow: 'hidden'
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

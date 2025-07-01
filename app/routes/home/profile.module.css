@@ -66,6 +66,24 @@
   margin-bottom: var(--spaceL);
   opacity: 0;
   transition: opacity var(--durationXL) ease var(--durationM);
+  font-family: var(--fontStack);
+  font-weight: var(--fontWeightBold);
+  font-size: var(--fontSizeH2);
+  line-height: var(--lineHeightTitle);
+
+  &[data-visible='true'] {
+    opacity: 1;
+  }
+}
+
+.title .orange-text {
+  color: #FF9F00;
+}
+
+.svg {
+  fill: #FF9F00;
+  opacity: 0;
+  transition: opacity var(--durationXL) ease var(--durationM);
 
   &[data-visible='true'] {
     opacity: 1;
@@ -131,7 +149,7 @@
   z-index: var(--zIndex3);
   opacity: 0;
   transition: opacity var(--durationM) ease var(--durationL);
-  fill: var(--textTitle);
+  fill: #FF9F00;
 
   &[data-visible='true'] {
     opacity: 1;
@@ -146,4 +164,26 @@
     transform: none;
     opacity: 1;
   }
+}
+
+.button[data-secondary='true'] {
+  --buttonTextColor: #ffffff;
+  --buttonBackground: #003366;
+  --buttonHoverBackground: #002a52;
+  --buttonSpace: 16px;
+  --buttonFontSize: calc((18 / 16) * 1rem);
+  --buttonFocusWidth: 4px;
+  --buttonPadding: 0 var(--buttonSpace);
+  --buttonColor: #ffffff;
+  --buttonTextOpacity: 1;
+  --buttonLoaderDelay: 0s;
+  --buttonSize: calc((56 / 16) * 1rem);
+}
+
+.profile-button {
+  background: #009999 !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-right: calc(var(--spaceS) * 1.5);
 }

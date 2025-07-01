@@ -2,7 +2,7 @@ from PIL import Image
 import os
 
 # Open the logo image
-logo_path = os.path.join('public', 'images', 'logo2.png')
+logo_path = os.path.join('public', 'images', 'logo.png')
 logo = Image.open(logo_path)
 
 # Resize the logo to common favicon sizes

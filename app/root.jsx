@@ -11,8 +11,8 @@ import {
 } from '@remix-run/react';
 import { createCookieSessionStorage, json } from '@remix-run/cloudflare';
 import { ThemeProvider, themeStyles } from '~/components/theme-provider';
-import NunitoRegular from '~/assets/fonts/Nunito-Regular.woff';
-import NunitoSemibold from '~/assets/fonts/Nunito-SemiBold.woff';
+// import NunitoRegular from '~/assets/fonts/Nunito-Regular.woff'; // moved to /public/fonts, now loaded via CSS or <link>
+// import NunitoSemibold from '~/assets/fonts/Nunito-SemiBold.woff'; // moved to /public/fonts, now loaded via CSS or <link>
 import { useEffect } from 'react';
 import { Error } from '~/layouts/error';
 import { VisuallyHidden } from '~/components/visually-hidden';
@@ -26,14 +26,14 @@ import './global.module.css';
 export const links = () => [
   {
     rel: 'preload',
-    href: '../assets/fonts/Nunito-SemiBold.woff',
+    href: '/fonts/Nunito-SemiBold.woff',
     as: 'font',
     type: 'font/woff',
     crossOrigin: '',
   },
   {
     rel: 'preload',
-    href: '../assets/fonts/Nunito-Regular.woff',
+    href: '/fonts/Nunito-Regular.woff',
     as: 'font',
     type: 'font/woff',
     crossOrigin: '',

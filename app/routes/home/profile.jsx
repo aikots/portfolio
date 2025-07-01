@@ -54,7 +54,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
               <ProfileText visible={visible} titleId={titleId} />
               <Button
                 secondary
-                className={styles.button}
+                className={`${styles.button} ${styles['profile-button']}`}
                 data-visible={visible}
                 href="/contact"
                 icon="send"
@@ -83,8 +83,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   width={480}
                   height={640}
                   sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
-                  alt="Mina at the Qwilr office in Sydney"
-                  alt="Me smiling like a goofball at the Qwilr office in Sydney"
+                  alt="Profile Image"
                 />
                 <svg className={styles.svg} data-visible={visible} viewBox="0 0 136 766">
                   <use href={`${katakana}#katakana-profile`} />

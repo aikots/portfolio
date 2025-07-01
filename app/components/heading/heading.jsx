@@ -7,7 +7,7 @@ export const Heading = ({
   level = 1,
   as,
   align = 'auto',
-  weight = 'medium',
+  weight = 'bold',
   className,
   ...rest
 }) => {
@@ -21,6 +21,10 @@ export const Heading = ({
         data-align={align}
         data-weight={weight}
         data-level={clampedLevel}
+        style={{
+          fontFamily: 'Oswald, sans-serif',
+          fontWeight: '700'
+        }}
         {...rest}
       >
         {children}

@@ -1,13 +1,11 @@
 import videoStamped4 from '~/assets/Stamped4.mp4';
-import imageSprComponentsLightLarge from '~/assets/spr-components-light-large.png';
-import imageSprComponentsLightPlaceholder from '~/assets/spr-components-light-placeholder.png';
+import imageSprComponentsLightLarge from '~/assets/Social Issues.png';
+import imageSprComponentsLightPlaceholder from '~/assets/Social Issues.png';
 import { deviceModels } from '~/components/model/device-models';
-import imageSprDesignSystemLightLarge from '~/assets/spr-design-system-light-large.png';
-import imageSprDesignSystemLightPlaceholder from '~/assets/spr-design-system-light-placeholder.png';
-import imageSprDesignSystemLight from '~/assets/spr-design-system-light.png';
-import imageSprLessonBuilderLightLarge from '~/assets/spr-lesson-builder-light-large.jpg';
-import imageSprLessonBuilderLightPlaceholder from '~/assets/spr-lesson-builder-light-placeholder.jpg';
-import imageSprLessonBuilderLight from '~/assets/spr-lesson-builder-light.jpg';
+import imageSprDesignSystemLightLarge from '~/assets/Personas.jpg';
+import imageSprDesignSystemLightPlaceholder from '~/assets/Personas.jpg';
+import imageSprDesignSystemLight from '~/assets/Personas.jpg';
+import imageProblem1 from '~/assets/Social Issues.png';
 import videoSprMotionLarge from '~/assets/spr-motion-large.mp4';
 import videoSprMotionPlaceholder from '~/assets/spr-motion-placeholder.jpg';
 import videoSprMotion from '~/assets/spr-motion.mp4';
@@ -20,6 +18,7 @@ import imageSprSchema2Light from '~/assets/spr-schema-2-light.png';
 import imageSprStoryboarderLightLarge from '~/assets/spr-storyboarder-light-large.png';
 import imageSprStoryboarderLightPlaceholder from '~/assets/spr-storyboarder-light-placeholder.png';
 import imageSprStoryboarderLight from '~/assets/spr-storyboarder-light.png';
+import Clusters from '~/assets/Clusters.png';
 import { Footer } from '~/components/footer';
 import { Image } from '~/components/image';
 import { Link } from '~/components/link';
@@ -41,6 +40,15 @@ import { Suspense, lazy, useMemo } from 'react';
 import { media } from '~/utils/style';
 import styles from './stamped.module.css';
 
+const BoldText = ({ children }) => (
+  <span style={{
+    fontWeight: '900',
+    fontSize: '1.1em',
+    color: '#309898',
+    WebkitTextFillColor: '#309898'
+  }}>{children}</span>
+);
+
 const Earth = lazy(() => import('./earth').then(module => ({ default: module.Earth })));
 const EarthSection = lazy(() =>
   import('./earth').then(module => ({ default: module.EarthSection }))
@@ -48,12 +56,12 @@ const EarthSection = lazy(() =>
 
 const title = 'Stamped: Fostering Multicultural Connections';
 const description =
-  'Me and my group designed Stamped, an app that connects newcomers with locals in Stockholm through unique at-home events.';
+  'A new app connecting newcomers with locals in Stockholm through unique at-home cultural events.';
 const roles = [
-  'Course Project: Media Technology and Interaction Design',
+  'Course Project: Media Technology and Interaction Design, KTH',
   'Group: 4 designers',
-  'Role: Concept Ideation, Research, UI/UX Design',
-  'Date: 2023',
+  'Role: Concept Ideation, User Research, UI/UX Design, Usability Testing',
+  'Duration: 2 months',
 ];
 
 export const meta = () => {
@@ -61,12 +69,6 @@ export const meta = () => {
 };
 
 export const Stamped = () => {
-  const { toggleTheme } = useTheme();
-
-  const handleThemeChange = () => {
-    toggleTheme('light');
-  };
-
   return (
     <>
       <ProjectContainer className={styles.projectContainer} style={{ backgroundColor: '#F0E4CC' }}>
@@ -78,88 +80,173 @@ export const Stamped = () => {
           data-light="true"
           videoSrc={videoStamped4}
         />
-        <ProjectSection padding="top" data-light="true">
-          <ProjectSectionContent>
-            <ProjectImage
-              raised
-              key="light"
-              srcSet={`${imageSprLessonBuilderLight} 1280w, ${imageSprLessonBuilderLightLarge} 2560w`}
-              width={1280}
-              height={800}
-              placeholder={imageSprLessonBuilderLightPlaceholder}
-              alt="The Stamped event builder interface showing a user creating a cooking event."
-              sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
-            />
-          </ProjectSectionContent>
-        </ProjectSection>
-        <ProjectSection>
-          <ProjectTextRow>
-            <ProjectSectionHeading>The problem</ProjectSectionHeading>
-            <ProjectSectionText>
-              In 2017, Smart Sparrow began a project to build an entirely new platform to
-              from the ground up to serve as the most powerful tool for educators to
-              create online learning experiences. The old platform was built in Flash, and
-              there were a number of user experience problems to solve in the process of
-              moving the platform to Javascript. The primary goals for the project were
-              reducing barriers to collaboration, and making the platform both easier for
-              new users, but with plenty of room to scale for advanced users.
+        <ProjectSection
+          data-light="false"
+          style={{
+            backgroundColor: '#F0E4CC',
+            color: '#003366',
+            paddingTop: '0',
+            paddingBottom: '0',
+            height: 'fit-content',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+          data-padding="none"
+          data-full-height="false"
+        >
+          <ProjectTextRow width="l" style={{ 
+            marginTop: '-2.5rem', 
+            marginBottom: '-1rem',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start'
+          }}>
+            <ProjectSectionHeading style={{ marginBottom: '.75rem' }}>The Problem</ProjectSectionHeading>
+            <ProjectSectionText className={styles.navyText}>
+              <BoldText>Social isolation</BoldText>, especially among foreign-born individuals moving to Stockholm is a pressing issue.
+              The individualistic and introverted nature of the Swedish culture exasperates the situation, leading to a far too common lack of <BoldText>integration</BoldText> of <BoldText>immigrants</BoldText> into their new society.
+              This lack can have an impact on multiple levels, from mental health issues and unequal access to opportunities, to <BoldText>segregation</BoldText> and <BoldText>cultural divisions</BoldText> , and more importantly an increasing hatred due to misinterpretation of cultural differences.
+              For this project, thus, the main goal was to facilitate <BoldText>interdependence</BoldText> and <BoldText>socialization</BoldText> between people who recently moved to Stockholm and locals, making our focus group dual: newcomers and locals.
             </ProjectSectionText>
           </ProjectTextRow>
         </ProjectSection>
-        <ProjectSection data-light="true">
-          <ProjectSectionContent>
+        <ProjectSection data-light="true" data-padding="none" style={{ paddingTop: '0rem', marginTop: '0rem', paddingLeft: '0px', paddingRight: '0px', marginLeft: '0px', marginRight: '0px', marginBottom: '-2rem' }}>
+          <ProjectSectionContent width="full" style={{ paddingLeft: '0px', paddingRight: '0px', marginLeft: '0px', marginRight: '0px' }}>
             <Image
               key="light"
               srcSet={`${imageSprComponentsLightLarge} 1024w, ${imageSprComponentsLightLarge} 2048w`}
               width={1024}
               height={800}
               placeholder={imageSprComponentsLightPlaceholder}
-              alt="A set of light themed components for the Stamped design system"
+              style={{ maxWidth: '1080px', width: '100%', height: 'auto', margin: '0 auto' }}
+              alt=" Stamped design system"
               sizes="100vw"
             />
-            <ProjectTextRow>
-              <SegmentedControl
-                currentIndex={0}
-                onChange={handleThemeChange}
-              >
-                <SegmentedControlOption>Light theme</SegmentedControlOption>
-              </SegmentedControl>
-            </ProjectTextRow>
-            <ProjectTextRow>
-              <ProjectSectionHeading>The Stamped design system</ProjectSectionHeading>
-              <ProjectSectionText>
-                To streamline the design process across designers and engineers for such a
-                large project, it was important to lay the foundations with a strong,
-                flexible design system that could evolve during the product’s development
-                cycle. This would inform both the aesthetics and user experience across
-                the product itself as well as the website and marketing material.
-              </ProjectSectionText>
-            </ProjectTextRow>
+            <div style={{ backgroundColor: '#F0E4CC', width: '100vw', position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', paddingTop: '40px', paddingBottom: '10px' }}>
+              <ProjectTextRow width="l" style={{ marginTop: '2rem' }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  marginLeft: '0rem'
+                }}>
+                  <ProjectSectionHeading className={styles.processTitle}>
+                    The Design Process
+                  </ProjectSectionHeading>
+                </div>
+                <div className={styles.designProcess} style={{ marginTop: '2.5rem' }}>
+                  <div className={styles.processColumn}>
+                    <div className={styles.title}>
+                      <span className={`${styles.number} ${styles.aquaNumber}`} style={{
+                        WebkitTextFillColor: '#309898'
+                      }}>1.</span>
+                      <span className={`${styles.text} ${styles.aquaText}`} style={{
+                        WebkitTextFillColor: '#309898'
+                      }}>Discover</span>
+                    </div>
+                    <div style={{ marginTop: '-1rem' }}>
+                      User Interviews<br />
+                      Cultural Probe
+                    </div>
+                  </div>
+                  <div className={styles.processColumn}>
+                    <div className={styles.title}>
+                      <span className={`${styles.number} ${styles.aquaNumber}`} style={{
+                        WebkitTextFillColor: '#309898'
+                      }}>2.</span>
+                      <span className={`${styles.text} ${styles.aquaText}`} style={{
+                        WebkitTextFillColor: '#309898'
+                      }}>Define</span>
+                    </div>
+                    <div style={{ marginTop: '-1rem' }}>
+                      Insights Clustering<br />
+                      Personas<br />
+                      Storyboarding<br />
+                      How Might We…
+                    </div>
+                  </div>
+                  <div className={styles.processColumn}>
+                    <div className={styles.title}>
+                      <span className={`${styles.number} ${styles.aquaNumber}`} style={{
+                        WebkitTextFillColor: '#309898'
+                      }}>3.</span>
+                      <span className={`${styles.text} ${styles.aquaText}`} style={{
+                        WebkitTextFillColor: '#309898'
+                      }}>Develop</span>
+                    </div>
+                    <div style={{ marginTop: '-1rem' }}>
+                      Sketching<br />
+                      Wireframing<br />
+                      Moodboard<br />
+                      Digital Prototype<br />
+                      Usability Testing
+                    </div>
+                  </div>
+                  <div className={styles.processColumn}>
+                    <div className={styles.title}>
+                      <span className={`${styles.number} ${styles.aquaNumber}`} style={{
+                        WebkitTextFillColor: '#309898'
+                      }}>4.</span>
+                      <span className={`${styles.text} ${styles.aquaText}`} style={{
+                        WebkitTextFillColor: '#309898'
+                      }}>Deliver</span>
+                    </div>
+                    <div style={{ marginTop: '-1rem' }}>
+                      Interactive Digital Prototype
+                    </div>
+                  </div>
+                </div>
+              </ProjectTextRow>
+            </div>
           </ProjectSectionContent>
         </ProjectSection>
-        <ProjectSection>
-          <ProjectSectionContent>
-            <Image
-              raised
-              key="light"
-              srcSet={`${imageSprDesignSystemLight} 1280w, ${imageSprDesignSystemLightLarge} 2560w`}
-              width={1280}
-              height={800}
-              placeholder={imageSprDesignSystemLightPlaceholder}
-              alt="A schema showing the Stamped design system components and their relationships"
-              sizes="100vw"
-            />
-            <ProjectTextRow>
-              <ProjectSectionHeading>Design system docs</ProjectSectionHeading>
-              <ProjectSectionText>
-                A design system is useless if no one knows how to use it, so we put
-                together a comprehensive documentation website to cover principles, ux,
-                accessibility, and component guidelines for designers and engineers
-                working with the system.
-              </ProjectSectionText>
-            </ProjectTextRow>
+        <ProjectSection padding="none" style={{ marginTop: '-2rem', backgroundColor: '#ffffff' }}>
+          <ProjectSectionContent width="full" style={{ gap: '1rem', padding: '4rem 2rem', backgroundColor: '#ffffff' }}>
+            <div style={{ display: 'flex', gap: '4rem', alignItems: 'flex-start', marginTop: '2rem' }}>
+              <Image
+                key="light"
+                src={Clusters}
+                width={800}
+                height={600}
+                style={{ maxWidth: '800px', width: '100%', height: 'auto' }}
+                alt="User research insights clustering"
+                sizes="100vw"
+              />
+              <div style={{ flex: '1 0 0', maxWidth: '600px', marginTop: '1rem' }}>
+                <ProjectTextRow width="s">
+                  <ProjectSectionHeading style={{ marginTop: '1rem' }}>User Research</ProjectSectionHeading>
+                  <ProjectSectionText>
+                    We conducted extensive user research to understand the challenges faced by newcomers in Stockholm. Our research included seven semi-structured user interviews and cultural probes to gain deep insights into their experiences and needs. We then clustered insights from each interview that resulted in 11 conclusions that helped us create personas describing future users.
+                  </ProjectSectionText>
+                </ProjectTextRow>
+              </div>
+            </div>
           </ProjectSectionContent>
         </ProjectSection>
+        <ProjectSection padding="none" style={{ marginTop: '-2rem', backgroundColor: '#ffffff' }}>
+          <ProjectSectionContent width="full" style={{ gap: '1rem', padding: '4rem 2rem', backgroundColor: '#ffffff' }}>
+            <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start', marginTop: '2rem' }}>
+              <div style={{ flex: '1 0 0', maxWidth: '600px', marginLeft: '4rem' }}>
+                <ProjectTextRow width="s">
+                  <ProjectSectionHeading style={{ marginTop: '1rem' }}>Problem Definition</ProjectSectionHeading>
+                  <ProjectSectionText>
+                    After identifying the main stakeholders in the issue and creating user personas, we concluded that while the immigrants appreciate the city and its infrastructure, they struggle with making new social connections, especially outside of work/education, which is amplified by the high cost of activities and climate conditions. Thus we decided on a "How might we" statement for the project. 
+                  </ProjectSectionText>
+                </ProjectTextRow>
+              </div>
+              <Image
+                key="light"
+                srcSet={`${imageSprDesignSystemLight} 1280w, ${imageSprDesignSystemLightLarge} 2560w`}
+                width={800}
+                height={600}
+                style={{ maxWidth: '800px', width: '100%', height: 'auto' }}
+                alt="User personas showing research insights and stakeholder analysis"
+                sizes="100vw"
+              />
+            </div>
+          </ProjectSectionContent>
+        </ProjectSection>
+        <div style={{ height: '3rem' }}></div>
         <ThemeProvider theme="dark" data-invert>
           <ProjectSection
             backgroundOverlayOpacity={0.5}

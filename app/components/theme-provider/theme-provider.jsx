@@ -1,5 +1,5 @@
-import NunitoRegular from '~/assets/fonts/Nunito-Regular.woff';
-import NunitoSemibold from '~/assets/fonts/Nunito-SemiBold.woff';
+// import NunitoRegular from '~/assets/fonts/Nunito-Regular.woff'; // moved to /public/fonts, now loaded via CSS or <link>
+// import NunitoSemibold from '~/assets/fonts/Nunito-SemiBold.woff'; // moved to /public/fonts, now loaded via CSS or <link>
 import IPAGothic from '~/assets/fonts/ipa-gothic.woff2';
 import { createContext, useContext } from 'react';
 import { classes, media } from '~/utils/style';
@@ -124,7 +124,7 @@ const fontStyles = squish(`
   @font-face {
     font-family: 'Nunito';
     font-weight: 400;
-    src: url(${NunitoRegular}) format('woff');
+    src: url('/fonts/Nunito-Regular.woff') format('woff');
     font-display: block;
     font-style: normal;
   }
@@ -132,7 +132,7 @@ const fontStyles = squish(`
   @font-face {
     font-family: 'Nunito';
     font-weight: 600;
-    src: url(${NunitoSemibold}) format('woff');
+    src: url('/fonts/Nunito-SemiBold.woff') format('woff');
     font-display: block;
     font-style: normal;
   }

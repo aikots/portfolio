@@ -56,12 +56,13 @@
 
 .name {
   text-transform: uppercase;
-  font-size: calc((24 / 16) * 1rem);
+  font-family: var(--fontStack);
+  font-weight: var(--fontWeightBold);
   letter-spacing: 0.3em;
-  color: #309898; /* Navy blue */
+  color: #FF9F00;
+  font-size: calc((32 / 16) * 1rem);
   margin-bottom: var(--space2XL);
   margin-top: 0;
-  font-weight: var(--fontWeightBold);
   line-height: 1;
   opacity: 0;
   visibility: hidden;
@@ -78,7 +79,7 @@
 
   @media (--mediaMobile) {
     margin-bottom: var(--spaceL);
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
     white-space: nowrap;
     overflow: hidden;
   }
@@ -92,11 +93,18 @@
     opacity: 1;
     visibility: visible;
   }
+
+  span {
+    font-family: inherit !important;
+    font-weight: inherit !important;
+  }
 }
 
 .title {
   letter-spacing: -0.03em;
   color: #309898;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
 }
 
 .row {
@@ -261,10 +269,13 @@
   height: 38px;
   position: fixed;
   bottom: 64px;
+  right: 50%;
+  transform: translateX(50%);
   transition-property: opacity;
   transition-duration: var(--durationL);
   transition-timing-function: ease;
   opacity: 0;
+  will-change: opacity;
 
   &::before {
     content: '';
@@ -292,6 +303,7 @@
 
   &[data-hidden='true'] {
     opacity: 0;
+    visibility: hidden;
 
     @media (--mediaUseMotion) {
       transform: translate3d(0, 20px, 0);

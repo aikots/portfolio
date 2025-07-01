@@ -205,7 +205,7 @@
 
 .indexNumber {
   font-size: calc(var(--fontSizeH4) * 2);
-  font-weight: var(--fontWeightBold);
+  font-weight: 900;
   color: #FF9F00;
   opacity: 0;
   transition-property: opacity;
@@ -222,6 +222,10 @@
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+.indexNumber span {
+  font-weight: inherit !important;
 }
 
 .projectSummary {

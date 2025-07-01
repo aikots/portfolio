@@ -1,3 +1,17 @@
 .home {
   overflow-x: hidden;
 }
+
+.home .button {
+  background-color: #309898 !important;
+  color: white !important;
+}
+
+.home .button * {
+  color: white !important;
+}
+
+.home .project .button {
+  background-color: #309898 !important;
+  color: white !important;
+}

@@ -7,6 +7,11 @@
   z-index: -1;
 }
 
+.largeText {
+  font-size: 4rem !important;
+  line-height: 1.2;
+}
+
 .projectImage {
   width: 100%;
   height: auto;
@@ -18,10 +23,32 @@
 
 .projectContainer {
   color: #003366;
+  background-color: white;
+}
+
+.bold {
+  font-weight: 900 !important;
+  font-size: 1.1em !important;
+  color: #309898 !important;
+}
+
+.boldAqua {
+  font-weight: 900;
+  font-size: 1.1em;
+  color: #309898;
+}
+
+.aquaTitle {
+  color: #309898 !important;
 }
 
 .projectSection {
   padding: 4rem 0;
+}
+
+.projectSection[data-light='false'] {
+  background-color: #F0E4CC;
+  color: #003366;
 }
 
 @media (max-width: 768px) {
@@ -58,14 +85,86 @@
   }
 }
 
-.projectTextRow {
-  display: flex;
-  gap: 2rem;
-  margin: 2rem 0;
+.designProcess {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 4rem;
+  margin-top: 4rem;
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  justify-content: center;
+  align-items: start;
+  position: relative;
 }
 
-@media (max-width: 768px) {
-  .projectTextRow {
-    flex-direction: column;
-  }
+.processColumn {
+  text-align: left;
+  padding: 1rem;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  top: -1rem;
+}
+
+.processTitle {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+/* Add styles for all headings in this project */
+.ProjectSectionHeading {
+  font-family: 'Oswald', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+
+
+.processColumn .title {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  margin-bottom: 1.5rem;
+}
+
+.processColumn .title span {
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.processColumn .title span.number {
+  font-weight: 900;
+  color: #FF9F00;
+  letter-spacing: 0.05em;
+}
+
+.processColumn .title span.text {
+  font-weight: 700;
+  font-family: 'Oswald', sans-serif;
+  color: #003366;
+}
+
+.processColumn .title span.text.aquaText {
+  color: #309898 !important;
+  font-weight: 700 !important;
+}
+
+.processColumn .title span.number.aquaNumber {
+  color: #309898 !important;
+  font-weight: 600 !important;
+  font-family: 'Oswald', sans-serif;
+}
+
+.processColumn br {
+  display: block;
+  margin-bottom: 1rem;
 }

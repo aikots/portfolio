@@ -1,3 +1,14 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @layer layout {
   @property --background1 {
     syntax: '<color>';
@@ -24,10 +35,28 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    --projectTextColor: #003366;
+    --headerBackgroundColor: white;
+    color: var(--projectTextColor);
+    background-color: var(--headerBackgroundColor);
+  }
+
+  .project h1, .project h2, .project h3, .project h4, .project h5, .project h6 {
+    font-family: 'Oswald', sans-serif !important;
+    font-weight: 700 !important;
+  }
+
+  .project .heading {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
   }
 
   .project * {
-    color: #003366 !important;
+    color: inherit !important;
+  }
+
+  .project .button {
+    color: var(--text) !important;
   }
 
   .section {
@@ -36,6 +65,11 @@
     display: grid;
     place-content: stretch;
     padding-bottom: 0;
+    background-color: var(--sectionBackgroundColor, transparent);
+  }
+
+  .section[data-light='false'] {
+    --sectionBackgroundColor: #F0E4CC;
   }
 
   .section[data-full-height='true'] {
@@ -56,6 +90,7 @@
     padding-top: var(--sectionPadding);
     padding-bottom: var(--sectionPadding);
     position: relative;
+    background-color: inherit;
 
     &[data-padding='none'] {
       padding-top: 0;
@@ -176,7 +211,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+    background-color: var(--headerBackgroundColor);
     position: relative;
 
     .headerContent {
@@ -220,6 +255,28 @@
       width: 100%;
       max-width: 600px;
       margin-bottom: -var(--spaceXS);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #309898;
+        transform: translateY(-0.25rem);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #309898;
+        transform: translateY(0.25rem);
+      }
     }
 
     .roleItem {
@@ -229,29 +286,72 @@
       min-height: 40px;
       display: flex;
       align-items: center;
+      border-bottom: 1px solid #309898;
+      padding: 0.125rem 0;
+      animation: fade-in 0.6s ease-out forwards;
     }
+
+    .roleItem:nth-child(1) { animation-delay: 0.2s; }
+    .roleItem:nth-child(2) { animation-delay: 0.4s; }
+    .roleItem:nth-child(3) { animation-delay: 0.6s; }
+    .roleItem:nth-child(4) { animation-delay: 0.8s; }
 
     .phoneFrame {
       position: relative;
       width: 260px;
       height: 550px;
       align-self: center;
-      border-radius: 30px;
       overflow: hidden;
       background: transparent;
       z-index: 2;
       margin-left: 20px;
       margin-top: -30px;
-      
-      /* Phone frame styling */
-      border: 2px solid #003366;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      
-      /* Add a subtle gradient to the border */
-      background: linear-gradient(145deg, transparent 0%, transparent 2px, #003366 2px, #003366 4px, transparent 4px);
-      
-      /* Add a subtle inner shadow for depth */
-      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transition: opacity 1.4s var(--bezierFastoutSlowin);
+    }
+
+    .phoneFrame[data-visible='true'] {
+      opacity: 1;
+    }
+
+    .videoWrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Ensure the video column is positioned correctly within the frame */
+    .phoneFrame .videoColumn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      overflow: hidden;
+      border-radius: 28px;
+      opacity: 0;
+      animation: projectFadeSlide 1.4s var(--bezierFastoutSlowin) var(--initDelay) forwards;
+    }
+
+    /* Ensure the video is positioned correctly within the column */
+    .phoneFrame .video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: transparent;
+      border-radius: 28px;
+      margin: auto;
+      opacity: 0;
+      animation: projectFadeSlide 1.4s var(--bezierFastoutSlowin) var(--initDelay) forwards;
     }
 
     .katakanaText {
@@ -310,7 +410,12 @@
       justify-content: center;
       background: transparent;
       overflow: hidden;
-      border-radius: 28px;
+      opacity: 0;
+      transition: opacity 1.4s var(--bezierFastoutSlowin);
+    }
+
+    .videoColumn[data-visible='true'] {
+      opacity: 1;
     }
 
     .video {
@@ -320,6 +425,8 @@
       background: transparent;
       border-radius: 28px;
       margin: auto;
+      opacity: 0;
+      animation: projectFadeSlide 1.4s var(--bezierFastoutSlowin) var(--initDelay) forwards;
     }
 
     @media (--mediaLaptop) {
@@ -381,6 +488,12 @@
         }
       }
     }
+
+    .wider-text {
+      max-width: 1000px; /* Adjust this value as needed */
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 
   .headerContent {
@@ -424,10 +537,30 @@
       transform: translate3d(0, var(--space3XL), 0);
     }
 
+    20% {
+      opacity: 0.2;
+      transform: translate3d(0, var(--space2XL), 0);
+    }
+
+    80% {
+      opacity: 0.8;
+      transform: translate3d(0, 10px, 0);
+    }
+
     100% {
       opacity: 1;
       transform: translate3d(0, 0, 0);
     }
+  }
+
+  .roles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spaceM);
+    border-top: 1px solid #309898;
+    border-bottom: 1px solid #309898;
+    padding: var(--spaceS) 0;
+    animation: projectFadeSlide 1.8s cubic-bezier(0.4, 0, 0.2, 1) var(--delay) forwards;
   }
 
   .details {
@@ -499,6 +632,21 @@
     border-top: 1px solid #309898;
     border-bottom: 1px solid #309898;
     padding: var(--spaceS) 0;
+    opacity: 0;
+    animation: projectFadeSlide 1.4s var(--bezierFastoutSlowin) calc(var(--initDelay) + 300ms) forwards;
+  }
+
+  .roleItem {
+    margin: 0;
+    padding: var(--spaceS) 0;
+    border-bottom: 1px solid #309898;
+    position: relative;
+    opacity: 0;
+    animation: projectFadeSlide 1.4s var(--bezierFastoutSlowin) forwards;
+  }
+
+  .roleItem:last-child {
+    border-bottom: none;
   }
 
   .roles p {

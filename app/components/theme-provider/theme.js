@@ -133,9 +133,9 @@ const light = {
   textDark: '#003366',
   textSecondary: '#003366',
   textMuted: '#003366',
-  textPrimary: '#003366',
-  textHighlight: '#003366',
-  textInverse: '#003366',
+  textPrimary: '#ffffff',
+  textHighlight: '#ffffff',
+  textInverse: '#ffffff',
   textLink: '#003366',
   textLinkHover: '#003366',
   textPlaceholder: '#003366',
@@ -146,9 +146,9 @@ const light = {
   textInfo: '#003366',
   white: '#ffffff',
   black: '#000000',
-  primary: '#003366',
+  primary: '#309898',
   secondary: '#003366',
-  accent: '#003366',
+  accent: '#309898',
   success: '#003366',
   warning: '#003366',
   error: '#003366',
@@ -157,6 +157,8 @@ const light = {
   shadow: 'rgba(0, 0, 0, 0.1)',
   overlay: 'rgba(0, 0, 0, 0.5)',
   gradient: 'linear-gradient(135deg, #ffffff 0%, #ffffff 100%)',
+  buttonText: '#ffffff',
+  buttonBackground: '#309898'
 };
 
 export const tokens = {

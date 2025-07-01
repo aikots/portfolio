@@ -2,6 +2,8 @@
   .heading {
     line-height: var(--lineHeightTitle);
     color: var(--textTitle);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
 
     &[data-level='0'] {
       letter-spacing: -0.05em;
