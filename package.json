@@ -8,6 +8,8 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
+    "postbuild": "xcopy build\\client public /E /I /Y"
+
     "dev": "node ./scripts/dev.cjs && remix vite:dev",
     "start": "wrangler pages dev ./build/client",
     "postinstall": "node ./scripts/draco.cjs",
