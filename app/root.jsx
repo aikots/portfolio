@@ -23,6 +23,8 @@ import styles from './root.module.css';
 import './reset.module.css';
 import './global.module.css';
 
+import TestRender from './test-render';
+
 export const links = () => [
   {
     rel: 'preload',
