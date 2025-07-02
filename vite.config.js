@@ -19,6 +19,24 @@ export default defineConfig({
   server: {
     port: 7777,
   },
+  resolve: {
+    alias: {
+      fs: false,
+      path: false,
+      stream: false,
+      os: false,
+      crypto: false,
+      buffer: false,
+      util: false,
+      http: false,
+      https: false,
+      zlib: false,
+      child_process: false,
+      net: false,
+      tls: false,
+      url: false
+    }
+  },
   plugins: [
     mdx({
       rehypePlugins: [[rehypeImgSize, { dir: 'public' }], rehypeSlug, rehypePrism],
