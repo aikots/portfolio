@@ -1,6 +1,8 @@
 import videoStamped4 from '~/assets/Stamped4.mp4';
-import imageSprComponentsLightLarge from '~/assets/Social Issues.png';
-import imageSprComponentsLightPlaceholder from '~/assets/Social Issues.png';
+import isolation1 from '~/assets/isolation1.png';
+import isolation2 from '~/assets/isolation2.png';
+import isolation1Placeholder from '~/assets/isolation1-placeholder.png';
+import isolation2Placeholder from '~/assets/isolation2-placeholder.png';
 import { deviceModels } from '~/components/model/device-models';
 import imageSprDesignSystemLightLarge from '~/assets/Personas.jpg';
 import imageSprDesignSystemLightPlaceholder from '~/assets/Personas.jpg';
@@ -112,17 +114,27 @@ export const Stamped = () => {
           </ProjectTextRow>
         </ProjectSection>
         <ProjectSection data-light="true" data-padding="none" style={{ paddingTop: '0rem', marginTop: '0rem', paddingLeft: '0px', paddingRight: '0px', marginLeft: '0px', marginRight: '0px', marginBottom: '-2rem' }}>
-          <ProjectSectionContent width="full" style={{ paddingLeft: '0px', paddingRight: '0px', marginLeft: '0px', marginRight: '0px' }}>
-            <Image
-              key="light"
-              srcSet={`${imageSprComponentsLightLarge} 1024w, ${imageSprComponentsLightLarge} 2048w`}
-              width={1024}
-              height={800}
-              placeholder={imageSprComponentsLightPlaceholder}
-              style={{ maxWidth: '1080px', width: '100%', height: 'auto', margin: '0 auto' }}
-              alt=" Stamped design system"
-              sizes="100vw"
-            />
+  <ProjectSectionContent width="full" style={{ paddingLeft: '0px', paddingRight: '0px', marginLeft: '0px', marginRight: '0px' }}>
+    <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', marginBottom: '2rem' }}>
+      <Image
+        src={isolation1}
+        width={512}
+        height={384}
+        placeholder={isolation1Placeholder}
+        style={{ maxWidth: '500px', width: '100%', height: 'auto', borderRadius: '8px' }}
+        alt="A person sitting alone on a bench in a city park, representing social isolation."
+        sizes="(max-width: 600px) 100vw, 50vw"
+      />
+      <Image
+        src={isolation2}
+        width={512}
+        height={384}
+        placeholder={isolation2Placeholder}
+        style={{ maxWidth: '500px', width: '100%', height: 'auto', borderRadius: '8px' }}
+        alt="A solitary figure looking out a window, symbolizing feelings of isolation."
+        sizes="(max-width: 600px) 100vw, 50vw"
+      />
+    </div>
             <div style={{ backgroundColor: '#F0E4CC', width: '100vw', position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw', paddingTop: '40px', paddingBottom: '10px' }}>
               <ProjectTextRow width="l" style={{ marginTop: '2rem' }}>
                 <div style={{
